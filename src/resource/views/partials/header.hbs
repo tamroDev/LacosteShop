@@ -1,0 +1,123 @@
+<header>
+  <div class="header">
+    <a href="/" class="link-home">
+      <img src="http://localhost:2003/img/home/7076.ico" alt="" />
+    </a>
+    <div class="search-container">
+      <form action="/product/search" method="get">
+      <input
+        type="text"
+        class="inputSearch"
+        id="search-bar"
+        placeholder="Find a product"
+        name="keyWord"
+      />
+      <button type="submit" id="search-button">
+        <i class="fa fa-search"></i>
+      </button>
+      </form>
+    </div>
+
+    <div class="more-option">
+      <span>EN</span>
+      <a href="" class="map"><i class="fa-solid fa-location-dot"></i></a>
+      {{#if (check userInfo)}} 
+          <a href="/product/cart/{{userInfo._id}}" class="map"><i class="fa-solid fa-cart-shopping"></i></a>
+          {{else}}
+          <a href="/product/cart/" class="map"><i class="fa-solid fa-cart-shopping"></i></a>
+      {{/if}}
+    </div>
+  </div>
+
+  <nav class="nav">
+    <ul>
+      <li>New In <i class="fa-solid fa-chevron-down"></i></li>
+      <li>Men <i class="fa-solid fa-chevron-down"></i></li>
+      <li>Women <i class="fa-solid fa-chevron-down"></i></li>
+      <li>kids <i class="fa-solid fa-chevron-down"></i></li>
+      <li>Account <i class="fa-solid fa-chevron-down"></i></li>
+      {{#if (check userInfo)}} 
+        {{#if (compare userInfo.role 0)}} 
+          <li>Admin<i class="fa-solid fa-chevron-down"></i></li>
+        {{/if}}
+      {{/if}}
+    </ul>
+    <div class="offHeader hiddenOffHeader">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </nav>
+
+  <div class="bottom-header hidden-header">
+    <div class="directional-item">
+      <a href="/product/new">
+        <div class="directional-img">
+          <img src="/img/home/navbar-1.webp" alt="" />
+        </div>
+        <div class="directional-title">
+          New In
+        </div>
+      </a>
+    </div>
+    <div class="directional-item">
+      <a href="/product/men">
+        <div class="directional-img">
+          <img src="/img/home/navbar-2.avif" alt="" />
+        </div>
+        <div class="directional-title">
+          Men
+        </div>
+      </a>
+    </div>
+    <div class="directional-item">
+      <a href="/product/women">
+        <div class="directional-img">
+          <img src="/img/home/navbar-3.avif" alt="" />
+        </div>
+        <div class="directional-title">
+          Women
+        </div>
+      </a>
+    </div>
+    <div class="directional-item">
+      <a href="/product/kid">
+        <div class="directional-img">
+          <img src="/img/home/navbar-4.avif" alt="" />
+        </div>
+        <div class="directional-title">
+          kids
+        </div>
+      </a>
+    </div>
+    <div class="directional-item">
+       {{#if (check userInfo)}}
+            <a class="js-user" href="/account/{{userInfo._id}}/me-account">
+          {{else}}
+            <a class="js-user" href="/account/login">
+          {{/if}}
+        <div class="directional-img">
+          <img src="/img/home/navbar-5.avif" alt="" />
+        </div>
+        <div class="directional-title">
+          Account
+        </div>
+      </a>
+    </div>
+      {{#if (check userInfo)}} 
+    <div class="directional-item">
+        {{#if (compare userInfo.role 0)}} 
+          <a href="/admin/product/list">
+            <div class="directional-img">
+              <img src="/img/home/navbar-6.avif" alt="" />
+            </div>
+            <div class="directional-title">
+                Admin pannel
+            </div>
+          </a>
+        {{/if}}
+    </div>
+      {{/if}}
+  </div>
+</header>
+<script>
+
+</script>

@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/css/client/cart.css" />
+<main>
+  <section class="cart">
+    <div class="cart-left">
+      <div class="header-cart">
+        <div class="heading-cart">Name Product</div>
+        <div class="heading-cart">Image</div>
+        <div class="heading-cart">Price Product</div>
+        <div class="heading-cart">Quantity</div>
+        <div class="heading-cart">Action</div>
+      </div>
+      <div class="content-cart">
+
+        {{#each dataRender}}
+          <div class="product-content">
+            <div class="name">{{this.nameProduct}}</div>
+            <div class="image">
+              <img src="{{firstImage this.image}}" alt="" />
+            </div>
+            <div class="price">{{this.priceProduct}} EUR</div>
+            <div class="quantity">
+              <button class="minus">-</button><input
+                class="total-quantity"
+                type="text"
+                value="1"
+              />
+              <button class="plus">+</button>
+            </div>
+            <div class="remove">
+              <a style="color: black;" href="#"><i
+                  class="fa-solid fa-xmark remove-btn"
+                  data-id="{{this._id}}"
+                ></i></a>
+            </div>
+          </div>
+        {{/each}}
+
+      </div>
+    </div>
+    <div class="cart-right">
+      <div class="data">
+        <div class="data-left">
+          <div class="item-data">Product Quantity:</div>
+          <div class="item-data">Price total:</div>
+          <div class="item-data">Discount:</div>
+        </div>
+        <div class="data-right">
+          <div class="content-data dt1">10</div>
+          <div class="content-data dt2">100$</div>
+          <div class="content-data dt3">10%</div>
+        </div>
+      </div>
+      <div class="action-bottom">
+        <div class="total">
+          <div class="total-title">Price total:</div>
+          <div class="number-total">90$</div>
+        </div>
+        <a href="#">Pay</a>
+      </div>
+    </div>
+  </section>
+</main>
+<form id="form-delete" action="#" method="post"></form>
+
+<script>
+  const remove = document.querySelectorAll(".remove-btn"); const form =
+  document.getElementById("form-delete"); let idData; remove.forEach((item) => {
+  item.addEventListener("click" , () => { idData = item.getAttribute("data-id");
+  form.action = `/product/cart/${idData}/delete?_method=DELETE`; form.submit();
+  }) })
+</script>
+
+<script src="/js/handleCart.js"></script>

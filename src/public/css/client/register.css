@@ -1,0 +1,198 @@
+.container-register {
+  width: 60%;
+  margin: auto;
+  padding-top: 40px;
+}
+
+.title {
+  font-weight: 700;
+  color: #002d18;
+  letter-spacing: 0.1px;
+  margin-bottom: 30px;
+}
+
+.wapper-register {
+  width: 100%;
+}
+
+.form-register {
+  border: 1px solid #f0f0f0;
+  padding: 0px 25px 20px 25px;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+
+.content-register {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.content-register h1 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #002d18;
+  margin-bottom: 8px;
+}
+
+.content-register p {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: #606060;
+  margin-bottom: 15px;
+  text-align: left;
+  line-height: 22px;
+}
+
+.content-input {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.name {
+  display: flex;
+  gap: 20px;
+}
+
+.lastName,
+.firstName {
+  flex-grow: 1;
+}
+
+.lastName,
+.firstName,
+.email,
+.password,
+.re-password {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.lastName label,
+.firstName label,
+.email label,
+.password label,
+.re-password label {
+  margin-bottom: 15px;
+  font-size: 13px;
+  color: #002d18;
+  font-weight: 700;
+}
+
+.lastName input,
+.firstName input,
+.email input,
+.password input,
+.re-password input {
+  padding: 12px;
+  border: 1px solid #f0f0f0;
+}
+
+.lastName input,
+.firstName input,
+.email input,
+.password input,
+.re-password input {
+  width: 100%;
+}
+
+.lastName input:focus,
+.firstName input:focus,
+.email input:focus,
+.password input:focus,
+.re-password input:focus {
+  padding: 12px;
+  border: 1px dashed #0d0d0d;
+}
+
+.btn-create-account {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.btn-create-account button {
+  padding: 14px;
+  width: 25%;
+  background-color: #002d18;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  margin-left: 40px;
+}
+
+.btn-create-account h3 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.btn-create-account h3 a {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #002d18;
+}
+
+.wapper-form {
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+}
+
+.right {
+  border: none;
+}
+
+.left {
+  border-right: 1px solid #f0f0f0;
+}
+
+.left,
+.right {
+  padding: 30px 40px;
+  flex-basis: 50%;
+}
+
+.check {
+  display: flex;
+  align-items: self-start;
+  gap: 10px;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.check label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #606060;
+}
+
+.title h1 {
+  text-align: center;
+  color: #02542e;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.title h1 img {
+  width: 20px;
+  filter: invert(60%);
+}
+
+.check-border {
+  border: 1px solid red !important;
+}
+
+.cl-red {
+  color: red !important;
+}

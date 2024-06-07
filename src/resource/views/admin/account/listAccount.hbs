@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="/css/admin/account/table.css" />
+<div class="left">
+  <ul>
+    <li>
+      <a href="/admin/account/list"><img src="/img/admin/list.svg" alt="" />LIST
+        ACCOUNT</a>
+    </li>
+  </ul>
+  <div class="back-home">
+    <img src="/img/admin/home.svg" alt="" />
+    <a href="/">Back Home</a>
+  </div>
+</div>
+<div class="right">
+  <div class="title">List Account</div>
+  <div class="wapper-form">
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Last Name</th>
+            <th>Fisrt Name</th>
+            <th>Tel</th>
+            <th>Adr</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <div>
+          <tbody>
+            {{#each data}}
+              <tr>
+                <td>{{this.lastName}}</td>
+                <td>{{this.firstName}}</td>
+                <td>{{this.phone}}</td>
+                <td>{{this.adr}}</td>
+                <td class="select">
+                  <select data-id="{{this._id}}" name="" id="">
+                    <option value="0">Admin</option>
+                    <option value="1">Staff</option>
+                    <option value="2">Member</option>
+                  </select>
+                  <h1 style="display: none;" class="role">
+                    {{this.role}}
+                  </h1>
+                </td>
+                <td class="selectStatus">
+                  <select data-id="{{this._id}}" name="" id="">
+                    <option value="0">Disable</option>
+                    <option value="1">Operating status</option>
+                  </select>
+                  <h1 style="display: none;" class="role">
+                    {{this.status}}
+                  </h1>
+                </td>
+              </tr>
+
+            {{/each}}
+          </tbody>
+
+        </div>
+      </table>
+    </div>
+  </div>
+</div>
+
+<form method="POST" class="form-update-role">
+  <input type="text" style="display: none;" name="role" value="" />
+</form>
+
+<form method="POST" class="form-update-status">
+  <input type="text" style="display: none;" name="status" value="" />
+</form>
+<script>
+</script>
+<script src="/js/handleAccountAdmin.js"></script>

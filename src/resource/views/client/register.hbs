@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="/css/client/register.css" />
+<main>
+  <div class="container-register">
+    <div class="title">Sign In
+      {{#if (check message)}}
+        <h1 class="noti">
+          <p>{{message}}</p>
+          <img src="/img/account/done-ring-round-fill.svg" alt="" />
+        </h1>{{/if}}</div>
+    <div class="wapper-register">
+      <form action="/account/register" method="post" class="form-register">
+        <div class="wapper-form">
+          <div class="left">
+            <div class="content-register">
+              <h1>1. Enter your personal information</h1>
+              <p>
+                Creating a Lacoste account is simple and easy. A Lacoste account
+                will allow you to join Le Club Lacoste, track the delivery of
+                your purchases, manage your personal details, receive exclusive
+                offers related to the loyalty program, and more. Enjoy many
+                benefits to discover all year long!
+              </p>
+            </div>
+            <div class="content-input">
+              <div class="name">
+                <div class="lastName">
+                  <label for="lastName">Last Name</label>
+                  <input name="lastName" id="lastName" type="text" />
+                </div>
+                <div class="firstName">
+                  <label for="firstName">First Name</label>
+                  <input name="firstName" id="firstName" type="text" />
+                </div>
+              </div>
+              <div class="email">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text" />
+              </div>
+              <div class="password">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" />
+              </div>
+              <div class="re-password">
+                <label for="re-password">Re-password</label>
+                <input id="re-password" name="re-password" type="password" />
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="content-register">
+              <h1 style="margin-bottom: 20px">2. Your preferences</h1>
+              <div class="check">
+                <input type="checkbox" name="check" id="check" />
+                <label class="text-checkbox" for="check">I agree to receive
+                  emails for Le Club Lacoste benefits and to be informed of the
+                  latest news</label>
+              </div>
+              <p style="font-size: 10px; line-height: 12px">
+                By creating an account and/or subscribing to the newsletter, you
+                agree to the Privacy Policy and Le Club Lacoste Terms &
+                Conditions.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-create-account">
+          <button>Create my account</button>
+          <h3>
+            Login here if you already have an
+            <a href="/account/login">account ?</a>
+          </h3>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+<script src="/js/registerCheck.js"></script>

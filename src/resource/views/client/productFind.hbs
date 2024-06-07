@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/css/client/product.css" />
+<link rel="stylesheet" href="/css/client/newIn.css" />
+<main>
+  <section class="directional-article">
+    <ul>
+      <li>
+        <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+      </li>
+      <li>
+        <a style="border-bottom: 2px solid black" href="/product/new">Search</a>
+      </li>
+      <li><a href="/product/men">Men</a></li>
+      <li><a href="/product/women">Women</a></li>
+      <li><a href="/product/kid">Kids</a></li>
+    </ul>
+  </section>
+  <section class="shops">
+    <div class="line"></div>
+    <div class="title">Find Product</div>
+    <div class="filter">
+      <button>
+        <img src="/img/newin/filter.png" alt="" />
+        Sort and Filter
+      </button>
+    </div>
+    <div class="products">
+      {{#each newData}}
+        <div class="product-item">
+          <div class="img-product">
+            <a href="/product/{{this._id}}/detail">
+              <img src="{{firstImage this.image}}" alt="" />
+
+            </a>
+          </div>
+          <div class="line-product"></div>
+          <div class="text-product">
+            <a href="/product/{{this._id}}/detail">{{this.nameProduct}}</a>
+          </div>
+          <div class="color-product">
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="red"></div>
+            <div class="green"></div>
+          </div>
+        </div>
+      {{/each}}
+      <h1
+        style="color:red; text-transform: uppercase; font-weight: 600; font-size: 32px; font-style: italic;"
+      >{{message}}</h1>
+    </div>
+  </section>
+</main>

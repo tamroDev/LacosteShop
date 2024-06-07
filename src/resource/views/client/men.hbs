@@ -1,0 +1,150 @@
+<link rel="stylesheet" href="/css/client/product.css" />
+<main>
+  <section id="collection" class="banner">
+    <img src="/img/men/image-content/menBanner.avif" alt="" />
+    <div class="text-banner">
+      <h2>Go to the men's collection</h2>
+      <div class="action-btn">
+        <button class="btn-scroll">
+          Scroll down<i class="fa-solid fa-arrow-down"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+  <section id="collection" class="collections">
+    <div class="title">MEN'S COLLECTION</div>
+    <div class="collection-container">
+      <div class="collection-item">
+        <div class="img-collection">
+          <img src="/img/men/image-content/collection-1.avif" alt="" />
+        </div>
+        <div class="text-collection">
+          <h4>ALL THE COLLETION</h4>
+          <button>keep watching</button>
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="img-collection">
+          <img src="/img/men/image-content/collection-2.avif" alt="" />
+        </div>
+        <div class="text-collection">
+          <h4>ALL THE COLLETION</h4>
+          <button>keep watching</button>
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="img-collection">
+          <img src="/img/men/image-content/collection-3.avif" alt="" />
+        </div>
+        <div class="text-collection">
+          <h4>ALL THE COLLETION</h4>
+          <button>keep watching</button>
+        </div>
+      </div>
+      <div class="collection-item">
+        <div class="img-collection">
+          <img src="/img/men/image-content/collection-4.avif" alt="" />
+        </div>
+        <div class="text-collection">
+          <h4>ALL THE COLLETION</h4>
+          <button>keep watching</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="album-show">
+    <div class="title-album">MEN'S SELECTION</div>
+    <div class="card-album">
+      <div class="card">
+        <a href="">
+          <img src="/img/men/image-content/SELECTION-1.avif" alt="" />
+        </a>
+        <div class="link-album">
+          <a href=""> My Lacoste - Customization</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="">
+          <img src="/img/men/image-content/SELECTION-2.avif" alt="" />
+        </a>
+        <div class="link-album">
+          <a href=""> Safe bet Sweaters</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="">
+          <img src="/img/men/image-content/SELECTION-3.avif" alt="" />
+        </a>
+        <div class="link-album">
+          <a href=""> Small leather goods</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="">
+          <img src="/img/men/image-content/SELECTION-4.avif" alt="" />
+        </a>
+        <div class="link-album">
+          <a href=""> Signature Sweatshirts</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="">
+          <img src="/img/men/image-content/SELECTION-5.jpg" alt="" />
+        </a>
+        <div class="link-album">
+          <a href=""> Outerwear</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="">
+          <img src="/img/men/image-content/SELECTION-6.avif" alt="" />
+        </a>
+        <div class="link-album">
+          <a href=""> Dream big with Lacoste kids</a>
+        </div>
+      </div>
+      <div class="card">
+        <a href="">
+          <img src="/img/men/image-content/SELECTION-7.avif" alt="" />
+        </a>
+        <div class="link-album">
+          <a href=""> Responsible materials</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="shops">
+    <div class="line"></div>
+    <div class="title">SHOPS</div>
+    <div class="filter">
+      <button>
+        <img src="/img/newin/filter.png" alt="" />
+        Sort and Filter
+      </button>
+    </div>
+    <div class="products">
+      {{#each newData}}
+        <div class="product-item">
+          <div class="img-product">
+            <a href="/product/{{this._id}}/detail">
+              <img src="{{firstImage this.image}}" alt="" />
+              <!-- Sử dụng helper để lấy ảnh đầu tiên -->
+            </a>
+          </div>
+          <div class="line-product"></div>
+          <div class="text-product">
+            <a href="/product/{{this._id}}/detail">{{this.nameProduct}}</a>
+          </div>
+          <div class="color-product">
+            <div class="black"></div>
+            <div class="white"></div>
+            <div class="red"></div>
+            <div class="green"></div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </section>
+</main>
+<script src="/js/scriptProduct.js"></script>
+<script src="/js/mouseScrollAlbum.js"></script>

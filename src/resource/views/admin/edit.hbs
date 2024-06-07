@@ -1,0 +1,160 @@
+<link rel="stylesheet" href="/css/admin/admin.css" />
+<div class="left">
+  <ul>
+    <li>
+      <a href="/admin/product/add">
+        <img src="/img/admin/shipment-add-solid.svg" alt="" />ADD PRODUCT
+      </a>
+    </li>
+    <li>
+      <a href="/admin/product/list"><img src="/img/admin/list.svg" alt="" />LIST
+        PRODUCT</a>
+    </li>
+    <li>
+      <a href="/admin/product/trash">
+        <img src="/img/admin/history.svg" alt="" />
+        HISTORY
+      </a>
+    </li>
+  </ul>
+  <div class="back-home">
+    <img src="/img/admin/home.svg" alt="" />
+    <a href="/">Back Home</a>
+  </div>
+</div>
+<div class="right">
+  <div class="title">Edit Product</div>
+  <div class="wapper-form">
+   <form action="/admin/product/{{product._id}}/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+      <div class="wapper-container">
+        <div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/product.svg"
+                alt=""
+              />Name</label>
+            <input
+              type="text"
+              name="nameProduct"
+              id="input"
+              placeholder="Prdouct name"
+              value="{{product.nameProduct}}"
+            />
+          </div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/price-change-outline.svg"
+                alt=""
+              />Price</label>
+            <input
+              type="text"
+              name="priceProduct"
+              id="input"
+              placeholder="Price product"
+              value="{{product.priceProduct}}"
+            />
+          </div>
+          <div class="wapper">
+            <label for="description"><img
+                src="/img/admin/description.svg"
+                alt=""
+              />Description</label>
+            <textarea
+              placeholder="description"
+              name="description"
+              id="description"
+              cols="30"
+              rows="10"
+            >{{product.description}}</textarea>
+          </div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/bars-3-bottom-left-solid.svg"
+                alt=""
+              />Category</label>
+            <select name="category" id="">
+              {{#each category}}
+                <option value="{{this.name}}">{{this.name}}</option>
+              {{/each}}
+            </select>
+            <p style="display: none;" class="category">{{product.category}}</p>
+
+          </div>
+        </div>
+
+        <div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/steps-number.svg"
+                alt=""
+              />Quantity</label>
+            <input
+              type="text"
+              name="quantity"
+              id="input"
+              placeholder="Quantity"
+              value="{{product.quantity}}"
+            />
+          </div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/discount.svg"
+                alt=""
+              />Discount</label>
+            <input
+              type="text"
+              id="input"
+              name="discount"
+              placeholder="Discount"
+              value="{{product.discount}}"
+            />
+          </div>
+          <div class="wapper wapper-inputFile">
+            <input
+              type="file"
+              name="images"
+              id="inputFile"
+              class="inputFile"
+              onchange="displayImage1()"
+              multiple
+            />
+            <div id="inputFocus" class="text-file">
+              <div class="waper-img">
+                <img
+                  id="previewImage"
+                  style="width: 80px;"
+                  class="img-select"
+                  src="{{this.image}}"
+                  alt="Selected Image"
+                />
+              </div>
+              <h1>Select photo here</h1>
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="btn-action">
+        <button>ADD Product</button>
+      </div>
+      </div>
+      
+    </form>
+  </div>
+</div>
+<script>
+  const option = document.querySelectorAll("option"); const category =
+  document.querySelector(".category").textContent; console.log(category)
+  ;[...option].forEach((item) => { if(item.value === category) {
+  item.setAttribute("selected",item) } })
+</script>
+
+<script>
+
+  function displayImage1() { const fileInput1 =
+  document.getElementById("inputFile"); const imagePreview1 =
+  document.querySelector(".img-select"); const file1 = fileInput1.files[0];
+  const reader1 = new FileReader(); reader1.onload = function (e) {
+  imagePreview1.src = e.target.result; }; reader1.readAsDataURL(file1);
+   }
+</script>
+{{! <script src="/js/productCheck.js"></script> }}

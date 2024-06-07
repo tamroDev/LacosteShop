@@ -1,0 +1,137 @@
+.wapper-form {
+  width: 100%;
+}
+
+.table-container {
+  max-height: 500px;
+  overflow-y: auto;
+  width: 100%;
+  border-bottom: 2px solid black;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff; /* Màu nền trắng */
+}
+
+.custom-table th {
+  /* border-radius: 27px; */
+  color: #000;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+td {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.custom-table thead {
+  color: #fff; /* Màu chữ trắng cho phần tiêu đề */
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.action a {
+  color: white;
+  background-color: red;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.action a:first-child {
+  background-color: #00d128;
+}
+
+td img {
+  max-width: 120px;
+  border-radius: 20px;
+  margin: auto;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 10px;
+  display: none;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  display: none;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.custom-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Thêm một lớp phụ cho các phần tử <th> */
+.custom-table thead th.sticky-header {
+  background-color: #000;
+  color: #fff;
+}
+
+.action button {
+  color: white;
+  background-color: red;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.action button:first-child {
+  background-color: #00d128;
+}
+
+.img-table {
+  display: flex;
+  width: 170px;
+  max-width: 170px;
+  overflow-x: auto;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.img-table::-webkit-scrollbar {
+  width: 10px; /* Chiều rộng của thanh cuộn */
+}
+
+.img-table::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Màu nền của track của thanh cuộn */
+}
+
+.img-table::-webkit-scrollbar-thumb {
+  background-color: #888; /* Màu của thanh cuộn */
+  border-radius: 5px; /* Bo tròn các góc của thanh cuộn */
+}
+
+.img-table::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Màu khi rê chuột vào thanh cuộn */
+}

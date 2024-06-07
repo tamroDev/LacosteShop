@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="/css/client/detail.css" />
+<main>
+  <session class="container-details">
+    <div class="location">
+      <h2>
+        Lacoste
+        <p>/</p>
+        Product
+        <p>/</p>
+        Detail Product
+      </h2>
+    </div>
+    <div class="container-product">
+      <div class="product">
+        <div class="img-product">
+          <img src="{{firstImage product.image}}" alt="Product Image" />
+        </div>
+        <div class="list-img">
+          {{#each img}}
+            <div class="img-more">
+              <img src="{{this}}" alt="" />
+              <!-- Truy cập từng phần tử trong mảng -->
+            </div>
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="content-product">
+        <div class="name-product">
+          <h1>
+            {{product.nameProduct}}
+          </h1>
+        </div>
+        <div class="price-product">
+          <span>{{product.priceProduct}} EUR</span>
+        </div>
+        <div class="title">Describe:</div>
+        <div class="description-product">
+          <p>
+            {{product.description}}
+          </p>
+        </div>
+        <div class="title">Quantiy:</div>
+        <div class="quantity-product">
+          <button class="minus">-</button>
+          <input type="text" class="total-quantity" value="1" />
+          <button class="plus">+</button>
+          <script>
+            const minus = document.querySelector(".minus"); const plus =
+            document.querySelector(".plus"); let total =
+            document.querySelector(".total-quantity"); let index = 1;
+            minus.addEventListener("click", (e) => { index--; if (index <= 1) {
+            index = 1; } console.log(index); total.value = index; });
+            plus.addEventListener("click", (e) => { index++; total.value =
+            index; });
+          </script>
+        </div>
+        <div class="title">Action:</div>
+        <div class="action-product">
+          <button class="btn-add-cart">
+            ADD TO CART
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+          <button>BUY <i class="fa-solid fa-money-bill"></i></button>
+        </div>
+        <form method="post" class="form-add" action="/product/add">
+          <input
+            type="text"
+            style="display: none;"
+            name="idProduct"
+            value="{{product._id}}"
+          />
+          <input
+            type="text"
+            style="display: none;"
+            name="idUser"
+            value="{{userId}}"
+          />
+        </form>
+        <script>
+          const btnAdd = document.querySelector(".btn-add-cart"); const form =
+          document.querySelector(".form-add"); console.log(form);
+          btnAdd.addEventListener("click",() => { form.submit(); })
+        </script>
+      </div>
+    </div>
+  </session>
+</main>
+<script src="/js/focusImg.js"></script>

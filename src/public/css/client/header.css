@@ -1,0 +1,275 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  line-height: 1;
+}
+
+html {
+  font-size: 16px;
+}
+
+#container {
+  font-family: "Figtree";
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  width: 100%;
+  background-color: #002d18;
+  z-index: 100;
+}
+
+.header {
+  height: 3.75rem; /* Converted from 60px */
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.link-home,
+.search-container,
+.more-option {
+  display: flex;
+  align-items: center;
+  height: 3.75rem; /* Converted from 60px */
+  gap: 1.25rem; /* Converted from 20px */
+}
+
+.header .link-home img {
+  width: 7.0625rem; /* Converted from 65px */
+  height: 6.5rem; /* Converted from 40px */
+}
+
+.search-container {
+  width: 70%;
+  position: relative;
+  display: inline-block !important;
+}
+
+#search-bar {
+  padding-right: 1.875rem; /* Converted from 30px */
+  width: 100%;
+  height: 2.4375rem; /* Converted from 39px */
+  background-color: white;
+  border-radius: 2.1875rem; /* Converted from 35px */
+  border: none;
+  padding: 0 2.8125rem; /* Converted from 45px */
+  margin-top: 0.9375rem; /* Converted from 15px */
+}
+
+#search-button {
+  position: absolute;
+  top: 0.3125rem; /* Converted from 5px */
+  left: 0.3125rem; /* Converted from 5px */
+  width: 1.875rem; /* Converted from 30px */
+  height: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#search-button i {
+  font-size: 1.125rem; /* Converted from 18px */
+  color: #888;
+}
+
+.more-option {
+  text-align: center;
+  justify-content: end;
+}
+
+.more-option span,
+.more-option a {
+  font-weight: 500;
+  color: white;
+  height: 3.125rem; /* Converted from 50px */
+  width: 3.125rem; /* Converted from 50px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.more-option span:hover,
+.more-option a:hover {
+  background-color: #888;
+}
+
+.nav {
+  max-height: 3.25rem; /* Converted from 52px */
+  height: 3.25rem; /* Converted from 52px */
+  width: 100%;
+  margin: 0.00625rem; /* Converted from 0.1rem */
+  transform-origin: top;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out,
+    max-height 0.4s ease-in-out;
+  transform: translateY(0);
+  position: relative;
+}
+
+.nav.hidden {
+  max-height: 0;
+  transform: translateY(-100%);
+  overflow: hidden;
+}
+
+.nav ul {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.875rem; /* Converted from 30px */
+}
+
+.nav ul li {
+  list-style: none;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1rem; /* Converted from 16px */
+  font-weight: 400;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+}
+
+.nav ul li i {
+  margin-left: 0.3125rem; /* Converted from 5px */
+}
+
+.bottom-header {
+  width: 100%;
+  background-color: #002d18;
+  border-top: 0.00625rem rgba(255, 255, 255, 0.1) solid;
+  transition: height ease-in-out 0.3s;
+  padding: 10px;
+
+  height: 500px;
+  overflow: hidden;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.bottom-header.hidden-header {
+  height: 0 !important;
+  overflow: hidden;
+  padding: 0px;
+}
+
+.bottom-header a {
+  text-decoration: none;
+}
+
+.directional-item {
+  flex-grow: 1; /* Mở rộng mỗi item để điền đầy không gian cha */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.directional-title {
+  color: #ffffff; /* Text color */
+  margin-top: 5px; /* Adjust spacing between image and title */
+}
+
+.directional-img {
+  height: 90%;
+  width: 100%;
+}
+
+.directional-img img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Giữ tỷ lệ khung hình không bị biến đổi */
+}
+
+/* Thanf cuộn ngang */
+.bottom-header::-webkit-scrollbar {
+  width: 2px; /* Chiều rộng của thanh cuộn */
+}
+
+.bottom-header::-webkit-scrollbar-track {
+  background: #f1f1f100;
+  opacity: 0;
+}
+
+.bottom-header::-webkit-scrollbar-thumb {
+  background: #888; /* Màu của thanh cuộn */
+  border-radius: 6px; /* Đường viền cong của thanh cuộn */
+}
+
+/* Thanh cuộn dọc */
+.bottom-header::-webkit-scrollbar {
+  width: 7px; /* Chiều rộng của thanh cuộn */
+}
+
+.bottom-header::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+.offHeader {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.offHeader i {
+  font-size: 30px;
+}
+
+.offHeader:hover {
+  background-color: gray;
+}
+
+.offHeader.hiddenOffHeader {
+  display: none;
+}
+
+main {
+  margin-top: 7rem;
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}

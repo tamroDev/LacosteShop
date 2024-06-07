@@ -1,0 +1,415 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+}
+button {
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+body {
+  min-height: 100vh;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+}
+
+li {
+  list-style: none !important;
+}
+
+#container {
+  font-family: "Figtree";
+  width: 100%;
+}
+
+.header {
+  height: 50px;
+  box-shadow: rgba(0, 0, 0, 0.293) 0px 7px 29px 0px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 10px;
+  align-items: center;
+  z-index: 100;
+  background-color: #fff;
+}
+
+.icon {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.icon-dashboarh {
+  width: 35px;
+}
+
+.logo-store img {
+  width: 75px;
+  height: 45px;
+}
+
+.nav ul {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav ul li {
+  list-style: none;
+}
+
+.nav ul li a {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.nav ul li a:hover {
+  color: #0084ff;
+}
+
+.action-admin {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search input {
+  padding: 8px 10px;
+  width: 230px;
+  border: 1px solid rgb(191, 188, 188);
+  font-size: 12px;
+  border-radius: 7px;
+  outline: none;
+}
+
+.setting img,
+.user img,
+.notifaciton img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* MAINNNNNNNNNNNNNNNN */
+
+.main {
+  padding-top: 50px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.left {
+  width: 15%;
+  border-right: 1px solid #0000;
+  box-shadow: rgba(18, 18, 19, 0.2) 0px 7px 29px 0px;
+  position: relative;
+  padding: 80px 10px 40px 10px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.left ul {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.left ul li {
+  width: 100%;
+}
+
+.left ul li a {
+  text-align: center;
+  font-size: 12px;
+  list-style: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 7px;
+  text-decoration: none;
+  color: black;
+}
+
+.left ul li a:hover {
+  color: #0084ff;
+  background-color: gainsboro;
+}
+
+.left ul li:hover .icon-image {
+  opacity: 1;
+}
+
+.left ul li img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+.icon-image {
+  opacity: 0.4;
+}
+
+.back-home {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.back-home img {
+  height: 45px;
+}
+
+.back-home a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.left .back-home:hover {
+  background-color: gainsboro;
+}
+
+.left .back-home:hover a {
+  color: #0084ff;
+}
+
+.right {
+  width: 85%;
+  height: 100%;
+  max-height: 100%;
+  padding: 10px;
+  margin-left: 15%;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 12px 20px;
+  width: max-content;
+  background-color: #0084ff;
+  color: white;
+  border-radius: 12px;
+  animation: title infinite 2s;
+  margin-left: 20px;
+  user-select: none;
+}
+
+@keyframes title {
+  0% {
+    transform: scale(1.05);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.wapper-form {
+  height: 100%;
+  width: max-content;
+  padding: 30px;
+  margin: auto;
+  /* border: 1px solid rgba(0, 0, 0, 0.17); */
+  height: max-content;
+}
+
+.wapper-container {
+  display: flex;
+  gap: 110px;
+}
+
+.wapper-container > div {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+  align-items: self-start;
+  height: max-content;
+}
+
+.wapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.wapper label {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wapper label img {
+  width: 20px;
+}
+
+.wapper input {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(128, 128, 128, 0.754);
+  width: 220px;
+  font-size: 12px;
+}
+
+.wapper textarea {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(128, 128, 128, 0.754);
+  width: 220px;
+  font-size: 12px;
+}
+
+.wapper input:focus {
+  border: 1px solid #0084ff;
+}
+
+.wapper-inputFile {
+  height: max-content;
+  width: max-content;
+  position: relative;
+  height: 175px;
+  width: 100%;
+}
+
+.inputFile {
+  height: 175px;
+  cursor: pointer;
+  background-color: #ffffff00;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.text-file {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px dashed black;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.text-file h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.text-file img {
+  width: 100px;
+}
+
+.btn-action {
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-action button {
+  background-color: #0084ff;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.btn-action button:hover {
+  opacity: 0.6;
+}
+
+select {
+  border: 1px solid rgb(191, 188, 188);
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+select option {
+  color: gainsboro;
+  cursor: pointer;
+}
+
+.check {
+  border: 1px solid red !important;
+}
+
+dl,
+ol,
+ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
+}

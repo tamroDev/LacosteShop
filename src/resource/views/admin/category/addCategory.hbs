@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/css/admin/category/add.css" />
+<div class="left">
+  <ul>
+    <li>
+      <a href="/admin/product/add">
+        <img
+          src="/img/admin/shipment-add-solid.svg"
+          alt="/admin/category/add"
+        />ADD CATEGORY
+      </a>
+    </li>
+    <li>
+      <a href="/admin/category/list"><img
+          src="/img/admin/list.svg"
+          alt=""
+        />LIST CATEGORY</a>
+    </li>
+    <li>
+      <a href="/admin/category/trash">
+        <img src="/img/admin/history.svg" alt="" />
+        HISTORY
+      </a>
+    </li>
+  </ul>
+  <div class="back-home">
+    <img src="/img/admin/home.svg" alt="" />
+    <a href="/">Back Home</a>
+  </div>
+</div>
+<div class="right">
+  <div class="title">ADD category</div>
+  <style>
+
+  </style>
+  <div class="wapper-form">
+    {{#if (check message)}}
+      <h1 class="message">
+        {{message}}
+        <img src="/img/account/done-ring-round-fill.svg" alt="" /></h1>
+    {{/if}}
+    <div class="wapper">
+      <form action="/admin/category/add" method="post">
+        <input type="text" name="name" placeholder="add category" />
+        <button>add category</button>
+      </form>
+    </div>
+  </div>
+</div>

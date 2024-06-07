@@ -1,0 +1,137 @@
+<link rel="stylesheet" href="/css/admin/admin.css" />
+<div class="left">
+  <ul>
+    <li>
+      <a href="/admin/product/add">
+        <img src="/img/admin/shipment-add-solid.svg" alt="" />ADD PRODUCT
+      </a>
+    </li>
+    <li>
+      <a href="/admin/product/list"><img src="/img/admin/list.svg" alt="" />LIST
+        PRODUCT</a>
+    </li>
+    <li>
+      <a href="/admin/product/trash">
+        <img src="/img/admin/history.svg" alt="" />
+        HISTORY
+      </a>
+    </li>
+  </ul>
+  <div class="back-home">
+    <img src="/img/admin/home.svg" alt="" />
+    <a href="/">Back Home</a>
+  </div>
+</div>
+<div class="right">
+  <div class="title">ADD Product</div>
+  <h1
+    style="text-align: center; color:rgb(11, 151, 58);text-transform: uppercase; font-weight: 600;"
+  >{{message}}</h1>
+  <div class="wapper-form">
+    <form
+      action="/admin/product/add"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <div class="wapper-container">
+        <div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/product.svg"
+                alt=""
+              />Name</label>
+            <input
+              type="text"
+              name="nameProduct"
+              id="input"
+              placeholder="Demo placeholder"
+            />
+          </div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/price-change-outline.svg"
+                alt=""
+              />Price</label>
+            <input
+              type="text"
+              name="priceProduct"
+              id="input"
+              placeholder="Demo placeholder"
+            />
+          </div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/description.svg"
+                alt=""
+              />Description</label>
+            <textarea
+              placeholder="Demo placeholder"
+              name="description"
+              id="input"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/bars-3-bottom-left-solid.svg"
+                alt=""
+              />Category</label>
+            <select name="category" id="">
+              {{#each category}}
+                <option value="{{this.name}}">{{this.name}}</option>
+              {{/each}}
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/steps-number.svg"
+                alt=""
+              />Quantity</label>
+            <input
+              type="text"
+              name="quantity"
+              id="input"
+              placeholder="Demo placeholder"
+            />
+          </div>
+          <div class="wapper">
+            <label for="input"><img
+                src="/img/admin/discount.svg"
+                alt=""
+              />Discount</label>
+            <input
+              type="text"
+              id="input"
+              name="discount"
+              placeholder="Demo placeholder"
+            />
+          </div>
+          <div class="wapper wapper-inputFile">
+            <input
+              multiple
+              type="file"
+              name="images"
+              id="inputFile"
+              class="inputFile"
+            />
+            <div id="inputFocus" class="text-file">
+              <div class="waper-img">
+                <img src="/img/admin/image.svg" alt="" />
+              </div>
+              <h1>Select photo here</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-action">
+        <button>ADD Product</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/js/productCheck.js"></script>

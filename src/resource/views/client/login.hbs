@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="/css/client/account.css" />
+
+<div class="form-wrapper">
+  <main class="form-side">
+    <a href="/" title="Logo">
+      <img src="/img/home/7076.ico" alt="Laplace Logo" class="logo" />
+    </a>
+    <form class="my-form" action="/account/login" method="post">
+      <div class="form-welcome-row">
+        <h1>Welcome back lacoste!</h1>
+        <h2>Login with your account!</h2>
+      </div>
+      <div class="socials-row">
+        <a href="#" title="Use Apple">
+          <img src="/img/account/apple.png" alt="Apple" />
+          Continue with Apple
+        </a>
+      </div>
+      <div class="socials-row">
+        <a href="#" title="Use Github">
+          <img src="/img/account/google.png" alt="Google" />
+          Continue with Google
+        </a>
+      </div>
+      <div class="divider">
+        <div class="divider-line"></div>
+        or
+        <div class="divider-line"></div>
+      </div>
+      <div class="text-field">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          autocomplete="off"
+          placeholder="you@example.com"
+        />
+        <div class="error-message">Email in incorrect format</div>
+      </div>
+      <div class="text-field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          placeholder="Your password"
+        />
+        <div class="error-message">
+          Minimum 6 characters at least 1 Alphabet and 1 Number
+        </div>
+      </div>
+      <div class="text-field">
+        <h1
+          style="color:red;font-size:12px;text-transform: uppercase;letter-spacing: 0.4px; text-align: center;"
+        >{{message}}</h1>
+      </div>
+      <button class="my-form__button" type="submit">Sign In</button>
+      <div class="my-form__actions">
+        <div class="my-form__row">
+          <span>Don't have an account?</span>
+          <a href="/account/register" title="Reset Password">
+            Sign Up Now
+          </a>
+        </div>
+      </div>
+    </form>
+  </main>
+  <aside class="info-side">
+    <div class="blockquote-wrapper">
+      <img src="/img/account/banner.avif" alt="Returns" class="returns" />
+      <blockquote>
+        Lacoste, a renowned French fashion brand, epitomizes sophistication with
+        its iconic green crocodile logo and signature polo shirts, embodying an
+        elegant sporty aesthetic.
+      </blockquote>
+      <div class="author">
+        <img
+          src="/img/account/banner.avif"
+          alt="Avatar"
+          class="avatar"
+          style="object-fit: cover"
+        />
+        <span class="author-name">@lacoste</span>
+      </div>
+    </div>
+  </aside>
+</div>

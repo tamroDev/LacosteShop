@@ -1,0 +1,43 @@
+.wapper-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.wapper input {
+  width: 300px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+button {
+  background-color: #0084ff;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+.message {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(87, 153, 21);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.message img {
+  width: 30px;
+}

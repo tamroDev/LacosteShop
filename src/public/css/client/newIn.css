@@ -1,0 +1,27 @@
+.directional-article {
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.directional-article ul {
+  display: flex;
+  gap: 20px;
+}
+
+.directional-article ul a {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+  padding-bottom: 7px;
+  display: block;
+  width: max-content;
+}
+
+.directional-article ul a:hover {
+  border-bottom: 2px solid black;
+  font-weight: 600;
+}
+
+.directional-article ul li {
+  list-style: none;
+}

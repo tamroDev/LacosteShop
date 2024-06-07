@@ -1,0 +1,133 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+<div class="left">
+  <ul>
+    <li>
+      <a href="/admin/product/add">
+        <img src="/img/admin/shipment-add-solid.svg" alt="" />ADD PRODUCT
+      </a>
+    </li>
+    <li>
+      <a href="/admin/product/list"><img src="/img/admin/list.svg" alt="" />LIST
+        PRODUCT</a>
+    </li>
+    <li>
+      <a href="/admin/product/trash">
+        <img src="/img/admin/history.svg" alt="" />
+        HISTORY
+      </a>
+    </li>
+  </ul>
+  <div class="back-home">
+    <img src="/img/admin/home.svg" alt="" />
+    <a href="/">Back Home</a>
+  </div>
+</div>
+<div class="right">
+  <div class="title">List Product</div>
+  <div class="wapper-form">
+    <div class="table-container">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th class="sticky-header">Produc name</th>
+            <th class="sticky-header">Image</th>
+            <th class="sticky-header">Price</th>
+            <th class="sticky-header">Date create</th>
+            <th class="sticky-header">Category</th>
+            <th class="sticky-header">Action</th>
+          </tr>
+        </thead>
+        <div>
+          <tbody>
+            {{#each data}}
+              <tr>
+                <td>{{this.nameProduct}}</td>
+                <td class="img-table">
+                {{#each this.image}}
+                  <img src="{{this}}" alt="Product Image" />
+                {{/each}}
+                </td>
+                <td>{{this.priceProduct}}</td>
+                <td>{{this.createdAt}}</td>
+                <td>{{this.category}}</td>
+                <td class="action">
+                  <a data-id="{{this._id}}" href="/admin/product/{{this._id}}/edit">Detail</a>
+                  <a
+                    href="/courses/{{this._id}}/delete"
+                    class="list-a"
+                    data-id="{{this._id}}"
+                    data-bs-toggle="modal"
+                    data-bs-target="#delete-course-modal"
+                  >Delete</a>
+                </td>
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </div>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  id="delete-course-modal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">You definitely want to delete ?</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        When you press "Confirm" the course will be permanently deleted Okay !!!
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >Close</button>
+        <button
+          id="btn-delete-coure"
+          type="button"
+          class="btn btn-danger"
+        >Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<form method="POST" id="delete-course-form"></form>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const listA = document.querySelectorAll(".list-a");
+    let product_id;
+    const formDelete = document.forms["delete-course-form"];
+    const btnDelete = document.getElementById("btn-delete-coure");
+    listA.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        product_id = item.getAttribute("data-id");
+        console.log(product_id);
+      });
+    });
+    btnDelete.addEventListener("click", function () {
+      formDelete.action = "/admin/product/" + product_id + "/delete?_method=DELETE";
+      formDelete.submit();
+    });
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
